@@ -1,0 +1,97 @@
+@baseUrl = http://localhost:7070
+
+### Hent alle digte
+GET http://localhost:7070/poem
+Accept: application/json
+
+### Opret et digt
+POST http://localhost:7070/poem
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Aften",
+  "author": "Fabian",
+  "content": "Solen synker ned\nHavet hvisker mod en sten\nNatten folder sig"
+}
+
+### Hent ét digt
+GET http://localhost:7070/poem/1
+Accept: application/json
+
+### Hent et digt, som ikke findes
+GET http://localhost:7070/poem/999999
+Accept: application/json
+
+### Opdater et digt
+PUT http://localhost:7070/poem/1
+Content-Type: application/json
+
+{
+  "title": "Stille aften",
+  "author": "Fabian",
+  "content": "Solen synker ned\nHavet hvisker mod en sten\nNatten folder sig"
+}
+
+### Slet digtet
+DELETE http://localhost:7070/poem/1
+
+### Kontrollér, at digtet er slettet
+GET http://localhost:7070/poem/1
+Accept: application/json
+
+@baseUrl = http://localhost:7070
+
+### 1. A Word
+POST {{baseUrl}}/poem
+Content-Type: application/json
+
+{
+  "title": "A Word",
+  "author": "Emily Dickinson",
+  "content": "A word is dead\nWhen it is said,\n  Some say.\nI say it just\nBegins to live\n  That day."
+}
+
+### 2. Life's Trades
+POST {{baseUrl}}/poem
+Content-Type: application/json
+
+{
+  "title": "Life's Trades",
+  "author": "Emily Dickinson",
+  "content": "It's such a little thing to weep,\n  So short a thing to sigh;\nAnd yet by trades the size of these\n  We men and women die!"
+}
+
+### 3. A Syllable
+POST {{baseUrl}}/poem
+Content-Type: application/json
+
+{
+  "title": "A Syllable",
+  "author": "Emily Dickinson",
+  "content": "Could mortal lip divine\n  The undeveloped freight\nOf a delivered syllable,\n  'T would crumble with the weight."
+}
+
+### 4. Friends
+POST {{baseUrl}}/poem
+Content-Type: application/json
+
+{
+  "title": "Friends",
+  "author": "Emily Dickinson",
+  "content": "Are friends delight or pain?\n  Could bounty but remain\nRiches were good.\n\nBut if they only stay\nBolder to fly away,\n  Riches are sad."
+}
+
+### 5. Philosophy
+POST {{baseUrl}}/poem
+Content-Type: application/json
+
+{
+  "title": "Philosophy",
+  "author": "Emily Dickinson",
+  "content": "It might be easier\n  To fail with land in sight,\nThan gain my blue peninsula\n  To perish of delight."
+}
+
+### Hent alle digte
+GET {{baseUrl}}/poem
+Accept: application/json
